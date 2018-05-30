@@ -1,0 +1,29 @@
+<div class="card">
+<h3 class="card-header bg-primary text-white" >
+  Liste de posts
+</h3>
+<div class="body" >
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Body</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor='let p of data | slice:0:10'  >
+      <td>{{p.id}}</td>
+      <td>{{p.title}}</td>
+      <td>{{p.body}}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+</div>
+
+
+</div>
