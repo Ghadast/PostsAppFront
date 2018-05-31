@@ -10,15 +10,9 @@ import { Routes, RouterLink,RouterModule } from '@angular/router';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { PostDetailsComponent } from './components/post-details/post-details.component';
 import { PostDetailsGuard } from './guards/post-details.guard';
+import { RoutingModule } from './routing/routing.module';
 
-const _routes: Routes= [
-  // objets json de configuration de routage
-{path: 'detail/:id',canActivate:[PostDetailsGuard] , component: PostDetailsComponent},
-{path: 'posts', component: PostListComponent},
-{path: 'welcome', component: WelcomeComponent},
-{path: '', redirectTo:'/welcome',pathMatch:'full'},
-{path: '**', component: NotfoundComponent},
-]
+
 
 @NgModule({
   declarations: [
@@ -31,9 +25,10 @@ const _routes: Routes= [
     PostDetailsComponent
   ],
   imports:
-   [RouterModule.forRoot(_routes),
+   [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    RoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
